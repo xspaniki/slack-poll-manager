@@ -1,0 +1,15 @@
+.table-responsive.mt-3
+  %table.table.table-hover
+    %thead.thead-light
+      %th Name
+      %th Votes count
+      %th
+    %tbody
+      - @polls.each do |poll|
+        %tr
+          %td.align-middle= poll.name
+          %td= poll.votes.size
+          %td
+            %a.btn.btn-primary.btn-small{ href: poll_path(poll), style: 'float: right;' }
+              Open poll
+              %i.fas.fa-search.ml-2

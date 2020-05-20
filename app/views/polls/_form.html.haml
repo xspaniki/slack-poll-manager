@@ -1,0 +1,17 @@
+= form_for @poll do |f|
+  .card.bg-light.mb-3.mt-3
+    .card-header New poll form
+    .card-body
+      .form-group
+        = f.label :name, 'Poll title'
+        = f.text_field :name, class: 'form-control'
+
+      %hr.mt-4.mb-1
+      %fieldset
+        = f.fields_for :answers do |ff|
+          = render partial: 'answer_fields', locals: { f: ff }
+        = link_to_add_fields "Add answer", f, :answers
+    .card-footer
+      = f.button nil, class: 'btn btn-success', type: :submit do
+        = 'Create poll'
+        %i.far.fa-save.ml-2

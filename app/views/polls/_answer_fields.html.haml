@@ -1,0 +1,10 @@
+.nested-fields.mt-2
+  = f.hidden_field :_destroy
+  .form-group
+    = f.label :name, 'Answer title'
+    = f.text_field :name, class: 'form-control'
+  %div
+    = link_to 'javascript:void(0);', class: "remove_fields btn btn-danger" do
+      = 'Remove'
+      %i.fas.fa-trash-alt.ml-2
+%hr.mb-1

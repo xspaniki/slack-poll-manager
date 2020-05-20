@@ -1,0 +1,7 @@
+.w-alerts-fixed.mt-3
+  - flash.each do |name, msg|
+    .alert.alert-dismissible{ class: "#{flash_alert_class(name)}", role: 'alert', data: { 'alert-close-time' => 5 } }
+      %button.close.fs-2.mt-1.alert-link{ type: 'button', 'data-dismiss' => 'alert', 'aria-label' => 'Close' }
+        %i.icon.icon-delete.fs-1
+      %i.icon.mr-2{ class: "#{flash_icon_class(name)}" }
+      %strong.fs-2= msg.html_safe

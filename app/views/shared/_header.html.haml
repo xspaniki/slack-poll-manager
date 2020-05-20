@@ -1,0 +1,12 @@
+%nav.navbar.navbar-dark.bg-primary.navbar-expand-lg
+  %a.navbar-brand{ href: polls_path } Night of Chances
+  %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    %ul.navbar-nav
+      %li.nav-item{ class: "#{active_class('polls', ['index'])}" }
+        %a.nav-link{ href: polls_path }
+          Dashboard
+      %li.nav-item{ class: "#{active_class('polls', ['new', 'create'])}" }
+        %a.nav-link{ href: new_poll_path }
+          New poll

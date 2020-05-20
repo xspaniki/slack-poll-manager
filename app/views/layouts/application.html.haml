@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title SlackPollManager
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header= render partial: '/shared/header'
+    .container-fluid
+      .row
+        .col-md-6.offset-md-3
+          = render partial: '/shared/alerts'
+          = yield
+        #sidebar.col-md-3.mt-3

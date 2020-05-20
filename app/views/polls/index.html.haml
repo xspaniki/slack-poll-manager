@@ -1,0 +1,10 @@
+- if @polls.present?
+  = render partial: 'table'
+- else
+  .alert.alert-primary No polls founded...
+
+%hr.mb-3.mt-1
+
+= link_to new_poll_path, class: 'btn btn-primary' do
+  New poll
+  %i.fas.fa-plus.ml-2

@@ -1,0 +1,10 @@
+#poll-wrapper{ data: { poll_id: @poll.id, 'channel-subscribe' => 'poll' } }
+  .card.bg-light.mb-3.mt-3
+    .card-header= @poll.name
+    .card-body
+      #chart-wrapper{ data: { answers: @presenter.answers_data(@poll).to_json } }
+        = bar_chart @presenter.chart_data(@poll), messages: { empty: "No data..." }
+    .card-footer
+      = link_to polls_path, class: 'btn btn-secondary' do
+        Back to polls
+        %i.fas.fa-undo.ml-2
